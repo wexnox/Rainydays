@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    background-color: #e2e2e2;
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    color: #0390ea;
+}
+.mobile-menu {
+    display: block;
+    background-color: #000000;
+    float: right;
+    width: 150px;
+    padding: 5px 0 50px 0;
+
+}
+
+.mobile-links li {
+    line-height: 2.8rem;
+}
+
+.mobile-btn {
+    display: grid;
+    justify-content: right;
+    align-content: center;
+    grid-auto-flow: column;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.links,.mobile-menu {
+    display: none;
+}
+.nav-links {
+    display: none;
+}
+.logo {
+    display: grid;
+    min-height: 10vh;
+    width: 10vh;
+    justify-content: start;
+    align-content: center;
+    padding: 5px;
+}
+
+.navbar {
+    background: black;
+    -webkit-box-shadow: -1px 4px 5px 0px rgb(28, 67, 38);
+    -moz-box-shadow: -1px 4px 5px 0px rgb(41, 60, 34);
+    box-shadow: -1px 4px 5px 0px rgb(5, 7, 4);
+    display: grid;
+    min-height: 10vh;
+    grid-auto-flow: column;
+    grid-gap: 1.5em;
+    padding: 0 50px;
+}
+
+/*CSS code for devices with a maximal width of 720 px */
+@media screen and (min-width:720px) {
+    .mobile-menu,
+    .mobile-btn,
+    .fa-bars {
+        display: none;
+    }
+
+    .nav-links {
+        display: grid;
+        justify-content: right;
+        align-content: center;
+        grid-auto-flow: column;
+        grid-gap: 1em;
+        font-family: sans-serif;
+    }
+
+}
