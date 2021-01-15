@@ -12,13 +12,48 @@ a {
 a:hover {
     color: #0390ea;
 }
+
+/* Layout */
+.container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "header"
+      "hero"
+      "center"
+      "center"
+      "center"
+      "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+.hero {
+    background: #ffffff; /* Note: here comes an image */
+    grid-area: hero;
+}
+
+.center {
+    display: grid;
+    grid-auto-flow: column;
+    grid-area: center;
+    max-width: 100%; /* Note: this needs to be moved to image/center prop */
+}
+
+footer {
+    background: #000000;
+    grid-area: footer;
+}
+
+/* Mobile menu */
 .mobile-menu {
     display: block;
     background-color: #000000;
     float: right;
     width: 150px;
     padding: 5px 0 50px 0;
-
 }
 
 .mobile-links li {
@@ -36,16 +71,18 @@ a:hover {
     list-style-type: none;
 }
 
-.links,.mobile-menu {
+.links, .mobile-menu {
     display: none;
 }
+
 .nav-links {
     display: none;
 }
+
 .logo {
     display: grid;
-    min-height: 10vh;
-    width: 10vh;
+    min-height: 50px;
+    width: 50px;
     justify-content: start;
     align-content: center;
     padding: 5px;
@@ -53,9 +90,9 @@ a:hover {
 
 .navbar {
     background: black;
-    -webkit-box-shadow: -1px 4px 5px 0px rgb(28, 67, 38);
-    -moz-box-shadow: -1px 4px 5px 0px rgb(41, 60, 34);
-    box-shadow: -1px 4px 5px 0px rgb(5, 7, 4);
+    -webkit-box-shadow: -1px 4px 5px 0 rgb(28, 67, 38);
+    -moz-box-shadow: -1px 4px 5px 0 rgb(41, 60, 34);
+    box-shadow: -1px 4px 5px 0 rgb(5, 7, 4);
     display: grid;
     min-height: 10vh;
     grid-auto-flow: column;
@@ -63,8 +100,9 @@ a:hover {
     padding: 0 50px;
 }
 
-/*CSS code for devices with a maximal width of 720 px */
-@media screen and (min-width:720px) {
+@media screen and (min-width: 720px) {
+
+    /* Navigation */
     .mobile-menu,
     .mobile-btn,
     .fa-bars {
@@ -77,7 +115,19 @@ a:hover {
         align-content: center;
         grid-auto-flow: column;
         grid-gap: 1em;
-        font-family: sans-serif;
+    }
+
+    /* Layout */
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1.5fr 1.2fr 0.5fr;
+        grid-template-areas:
+            "header header header"
+            "hero hero hero"
+            "center center center"
+            "footer footer footer";
     }
 
 }
