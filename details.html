@@ -2,18 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rainydays</title>
+    <!-- Styles -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="data:;base64,=" />
-    <title>Rainydays | Products</title>
   </head>
+
   <body>
     <header>
       <nav>
@@ -38,12 +53,9 @@
       </nav>
     </header>
 
-    <main class="content">
-      <div class="products"></div>
-      <div class="cart">
-        <div class="cart-list"></div>
-        <div class="total">Total:</div>
-        <a href="cart.html" class="checkout-button">Checkout</a>
+    <main class="container content">
+      <div class="sw-details">
+        <div class="loader"></div>
       </div>
     </main>
     <footer class="footer">
@@ -53,7 +65,8 @@
       </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/products.js" type="module"></script>
+    <script src="./js/component/message.js"></script>
+    <script src="./js/detail.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

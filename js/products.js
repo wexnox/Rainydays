@@ -7,14 +7,18 @@ const totalContainer = document.querySelector(".total");
 let cartArray = [];
 
 productArray.forEach(function (product) {
-  productsContainer.innerHTML += `<div class="product">
+  productsContainer.innerHTML += `
+  <a href="details.html?id=${product.id}">
+  <div class="product">
         <h2>${product.name}</h2>
         <p>${product.description}</p>
         <div style="background-image: url(${product.image})" class="product-image"></div>
 
         <div class="product-price">${product.price}</div>
         <button class="product-button" data-product="${product.id}">Add to cart</button>
-        </div>`;
+        </div>
+        
+        </a>`;
 });
 
 const buttons = document.querySelectorAll("button");
