@@ -27,10 +27,9 @@ productArray.forEach(function (product) {
   <div class="product">
     <h2>${product.name}</h2>
       <p>${product.description}</p>
-     <div style="background-image: url(${product.image})" class="product-image"></div
-      <div class="product-price">${product.price}</div>
-    
-      <button class="product-button" data-product="${product.id}">Add to cart</button>
+    <div style="background-image: url(${product.image})" class="product-image"></div>
+    <div class="product-price">${product.price}</div>
+    <button class="product-button" data-product="${product.id}">Add to cart</button>
    </div>`;
 });
 // fetchProducts();
