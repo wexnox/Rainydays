@@ -1,4 +1,10 @@
 import { productArray } from "./constants/productList.js";
+
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+const url = "http://api.rainydays.noroff.wexox.no/wp-json/wc/v3/products/";
+
 const productsContainer = document.querySelector(".products");
 const cart = document.querySelector(".cart");
 const cartList = document.querySelector(".cart-list");
@@ -6,20 +12,27 @@ const totalContainer = document.querySelector(".total");
 
 let cartArray = [];
 
+async function fetchProducts() {
+  try {
+    const response = await fetch(url);
+    const results = await response.json();
+    console.log(results);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 productArray.forEach(function (product) {
   productsContainer.innerHTML += `
-  <a href="details.html?id=${product.id}">
   <div class="product">
-        <h2>${product.name}</h2>
-        <p>${product.description}</p>
-        <div style="background-image: url(${product.image})" class="product-image"></div>
-
-        <div class="product-price">${product.price}</div>
-        <button class="product-button" data-product="${product.id}">Add to cart</button>
-        </div>
-        
-        </a>`;
+    <h2>${product.name}</h2>
+      <p>${product.description}</p>
+    <div style="background-image: url(${product.image})" class="product-image"></div
+    <div class="product-price">${product.price}</div>
+    <button class="product-button" data-product="${product.id}">Add to cart</button>
+   </div>`;
 });
+fetchProducts();
 
 const buttons = document.querySelectorAll("button");
 

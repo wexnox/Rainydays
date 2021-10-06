@@ -6,9 +6,9 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-const url = "http://127.0.0.1:5500/details.html?" + id;
+const url = "http://rainydays.noroff.wexox.no/details.html?" + id;
 
-async function fetchFilm() {
+async function fetchProduct() {
   try {
     const response = await fetch(url);
 
@@ -25,9 +25,9 @@ async function fetchFilm() {
   }
 }
 
-fetchFilm();
+fetchProduct();
 
-function createHtml(film) {
+function createHtml(product) {
   detailContainer.innerHTML = ` <h2>${product.name}</h2>
                                 <p>${product.description}</p>
                                 <div style="background-image: url(${product.image})" class="product-image"></div>
