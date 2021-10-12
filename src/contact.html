@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rainydays | Contact Us</title>
+    <!-- Styles -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.min.css" />
+    <link rel="icon" href="data:;base64,=" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="./images/RainyDays_Logo2.png" alt="Logo" />
+          <a href="/">Home</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cart">
+          <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content">
+      <div class="container">
+        <div class="container-item">
+          <h1>Contact Us!</h1>
+          <p>Soluta unde ducimus, cum reprehenderit distinctio minima.</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. At soluta
+            natus distinctio nam provident.
+          </p>
+          <p>
+            Blanditiis sit nostrum commodi tempore tenetur dolorem magni itaque
+            ea placeat corporis suscipit praesentium reprehenderit, ipsam nam
+            amet doloremque facere beatae illum est accusamus consequatur a
+            alias autem laborum!
+          </p>
+        </div>
+        <div class="container-item">
+          <form action="" id="contactForm">
+            <div>
+              <label for="firstName"
+                >First name:
+                <input
+                  name="firstName"
+                  id="firstName"
+                  placeholder="Minimum 3 chars (required)"
+                />
+              </label>
+              <div class="form-error" id="firstNameError">
+                Your first name must be at least 3 characters
+              </div>
+            </div>
+            <div>
+              <label for="lastName">
+                Last Name:
+                <input
+                  name="lastName"
+                  id="lastName"
+                  placeholder="Minimum 3 chars (required)"
+                />
+              </label>
+              <div class="form-error" id="lastNameError">
+                Your last name must be at least 3 characters
+              </div>
+            </div>
+            <div>
+              <label for="subject">
+                Subject (required)
+                <input
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject (required)"
+                />
+              </label>
+              <div class="form-error" id="subjectError">
+                Must have a value with a minimum length of 10
+              </div>
+            </div>
+            <div>
+              <label for="email">
+                Email:
+                <input name="email" id="email" placeholder="Email (required)" />
+              </label>
+              <div class="form-error" id="emailError">
+                Please enter a valid email address
+              </div>
+            </div>
+            <div>
+              <label for="address">
+                Address:
+                <input
+                  name="address"
+                  id="address"
+                  placeholder="Address (required)"
+                />
+              </label>
+              <div class="form-error" id="addressError">
+                Please enter a valid Address
+              </div>
+            </div>
+
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/all.js"></script>
+  </body>
+</html>
