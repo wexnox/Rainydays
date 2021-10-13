@@ -1,8 +1,6 @@
 const detailContainer = document.querySelector(".sw-details");
 
-const queryString = document.location.search;
-
-const params = new URLSearchParams(queryString);
+const params = new URLSearchParams(document.location.search);
 
 const id = params.get("id");
 

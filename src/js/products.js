@@ -1,26 +1,14 @@
 import { productArray } from "./constants/productList.js";
-
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
+// const params = new URLSearchParams(document.location.search);
+// const id = params.get("id");
 // const url = "http://api.rainydays.noroff.wexox.no/wp-json/wc/v3/products/";
 
 const productsContainer = document.querySelector(".products");
 const cart = document.querySelector(".cart");
 const cartList = document.querySelector(".cart-list");
-const totalContainer = document.querySelector(".total");
+// const totalContainer = document.querySelector(".total");
 
 let cartArray = [];
-
-// async function fetchProducts() {
-//   try {
-//     const response = await fetch(url);
-//     const results = await response.json();
-//     console.log(results);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 productArray.forEach(function (product) {
   productsContainer.innerHTML += `

@@ -33,26 +33,32 @@ const paths = {
 
 // sass task
 function scssTask() {
-  return src(paths.styles.src, { sourcemaps: true })
-    .pipe(sass().on("error", sass.logError))
-    .pipe(dest(paths.styles.dest))
-    .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(
-      rename({
-        extname: ".min.css",
-      })
-    )
-    .pipe(dest(paths.styles.dest, { sourcemaps: "." }));
+  return (
+    src(paths.styles.src, { sourcemaps: true })
+      .pipe(sass().on("error", sass.logError))
+      // .pipe(autoprefixer("last 2 versions"))
+      .pipe(dest(paths.styles.dest))
+      .pipe(postcss([autoprefixer("last 2 versions"), cssnano()]))
+      .pipe(
+        rename({
+          extname: ".min.css",
+        })
+      )
+      .pipe(dest(paths.styles.dest, { sourcemaps: "." }))
+  );
 }
 
 // JavaScript Task
 function jsTask() {
   return (
     src(paths.scripts.src)
-      // .pipe(sourcemaps.init())
-      .pipe(terser())
+      .pipe(sourcemaps.init())
       .pipe(concat("all.js"))
-      .pipe(dest(paths.scripts.dest, { sourcemaps: "." }))
+      // .pipe(terser({ toplevel: true })) // TODO: turn back on when fixed
+      .pipe(terser())
+
+      .pipe(sourcemaps.write("./"))
+      .pipe(dest(paths.scripts.dest))
   );
 }
 // Copies html files from src to dest
@@ -60,27 +66,23 @@ function copyHtml() {
   return src(paths.html.src).pipe(dest(paths.html.dest, { overwrite: true }));
 }
 
-function copySvg() {
-  return src("./src/images/**/*.svg").pipe(dest(paths.images.dest));
-}
-
 //optimize and move images
 function optimizeimg() {
-  return src("src/images/*.{jpg,png}")
+  return src("src/images/*.{jpg,png,svg}")
     .pipe(
       imagemin([
         imagemin.mozjpeg({ quality: 80, progressive: true }),
         imagemin.optipng({ optimizationLevel: 2 }),
       ])
     )
-    .pipe(dest("dist/images"));
+    .pipe(dest(paths.images.dest));
 }
 
 //optimize and move images
 function webpImage() {
-  return src("dist/images/*.{jpg,png}")
+  return src("dist/assets/images/*.{jpg,png,svg}")
     .pipe(imagewebp())
-    .pipe(dest("dist/images"));
+    .pipe(dest(paths.images.dest));
 }
 
 // Browsersync Tasks
@@ -104,16 +106,22 @@ function browsersyncReload(cb) {
 function watchTask() {
   watch(paths.html.src, copyHtml, browsersyncReload);
   watch("src/images/*", optimizeimg);
-  watch("dist/images/*.{jpg,png}", webpImage);
+  watch("dist/assets/images/*.{jpg,png}", webpImage);
   watch(
     ["./src/scss/**/*.scss", "./src/js/**/*.js", "./src/*.html"],
-    series(scssTask, jsTask, copySvg, copyHtml, browsersyncReload)
+    series(
+      scssTask,
+      jsTask,
+      // copySvg,
+      copyHtml,
+      browsersyncReload
+    )
   );
 }
 
 // Default Gulp task
 exports.default = series(
-  copySvg,
+  // copySvg,
   copyHtml,
   scssTask,
   jsTask,
@@ -124,3 +132,5 @@ exports.default = series(
 );
 
 exports.copyHtml = copyHtml;
+exports.jsTask = jsTask;
+exports.scssTask = scssTask;
