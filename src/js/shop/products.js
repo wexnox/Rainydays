@@ -10,7 +10,9 @@ async function getProducts() {
     productResults.forEach((product) => {
       document.querySelector(".products").innerHTML += `
         <div class="product">
-            <h2>${product.name}</h2>
+        <a href="details.html?id=${product.id}">
+        <h2>${product.name}</h2>
+         </a>
             <p>${product.short_description}</p>
             
             <div style="background-image: url(${product.images[0].src})" class="product-image"></div>

@@ -23,15 +23,17 @@ async function getProducts() {
     const productsResults = products;
     productsResults.forEach(function (product) {
       productsContainer.innerHTML += `
-  <div class="product">
+    <div class="product">
+    <a href="product.html?id=${product.id}">
     <h2>${product.name}</h2>
+    </a>
     <p>${product.short_description}</p>
       
     <div style="background-image: url(${product.images.srcset})" class="product-image"></div>
     <p>${product.description}</p>
     <div class="product-price">${product.prices.price}</div>
     <button class="product-button" data-product="${product.id}">Add to cart</button>
-   </div>`;
+    </div>`;
     });
   } catch (error) {
     console.log(error);
