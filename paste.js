@@ -1,9 +1,4 @@
 // import { productArray } from "./constants/productList.js";
-// const url = "http://api.rainydays.noroff.wexox.no/wp-json/wc/v3/products/";
-const params = new URLSearchParams(document.location.search);
-
-const id = params.get("id");
-const url = "http://rainydays.noroff.wexox.no/details.html?";
 
 const productsContainer = document.querySelector(".products");
 const cart = document.querySelector(".cart");
