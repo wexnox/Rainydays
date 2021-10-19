@@ -1,0 +1,28 @@
+$font-stack: verdana, sans-serif;
+
+$light-color: #f4f4f4;
+$darker-color: #585772;
+
+$primary-color: #5f5f79;
+$secondary-color: #81bb85e0;
+
+$btn-primary: #46ac7c;
+$btn-secondary: #81bb85e0;
+
+$gradientA: #22222e;
+$gradientB: #9595b8;
+
+// Set text color based on bg
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}

@@ -36,8 +36,7 @@ function scssTask() {
   return (
     src(paths.styles.src, { sourcemaps: true })
       .pipe(sass().on("error", sass.logError))
-      // .pipe(autoprefixer("last 2 versions"))
-      .pipe(dest(paths.styles.dest))
+      // .pipe(dest(paths.styles.dest))
       .pipe(postcss([autoprefixer("last 2 versions"), cssnano()]))
       .pipe(
         rename({
@@ -51,14 +50,10 @@ function scssTask() {
 // JavaScript Task
 function jsTask() {
   return (
-    src(paths.scripts.src)
-      .pipe(sourcemaps.init())
-      .pipe(concat("all.js"))
-      // .pipe(terser({ toplevel: true })) // TODO: turn back on when fixed
-      .pipe(terser())
-
-      .pipe(sourcemaps.write("./"))
-      .pipe(dest(paths.scripts.dest))
+    src(paths.scripts.src, { sourcemaps: true })
+      // .pipe(concat("all.js"))
+      // .pipe(terser({ toplevel: true }))
+      .pipe(dest(paths.scripts.dest, { sourcemaps: "." }))
   );
 }
 // Copies html files from src to dest
@@ -92,7 +87,7 @@ function browsersyncServe(cb) {
       baseDir: "./dist/",
       index: "index.html",
     },
-    // injectChanges: true,
+    injectChanges: true,
   });
   cb();
 }
@@ -109,19 +104,12 @@ function watchTask() {
   watch("dist/assets/images/*.{jpg,png}", webpImage);
   watch(
     ["./src/scss/**/*.scss", "./src/js/**/*.js", "./src/*.html"],
-    series(
-      scssTask,
-      jsTask,
-      // copySvg,
-      copyHtml,
-      browsersyncReload
-    )
+    series(scssTask, jsTask, copyHtml, browsersyncReload)
   );
 }
 
 // Default Gulp task
 exports.default = series(
-  // copySvg,
   copyHtml,
   scssTask,
   jsTask,

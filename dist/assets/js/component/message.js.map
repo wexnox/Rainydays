@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["component/message.js"],"sourcesContent":["function message(messageType = \"success\", message = \"\") {\r\n  return `<div class=\"alert ${messageType}\">${message}</div>`;\r\n}\r\n"],"file":"component/message.js"}

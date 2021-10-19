@@ -4,7 +4,7 @@
 
 ## TODO: Footer needs to be sorted. Gradient top down sliver
 
-## TODO: Paralax? https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_parallax&stacked=h
+## TODO: Paralax? 
 
 ## Shopping cart: https://www.youtube.com/watch?v=dYRgB-0xvdw
 
