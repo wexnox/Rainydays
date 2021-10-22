@@ -30,13 +30,6 @@ async function getProducts() {
     buttons.forEach(function (button) {
       button.onclick = function (event) {
         console.log(data);
-        // console.log(event.target);
-        // console.log(event.target.dataset);
-        // console.log(event.target.dataset.product);
-
-        // cartArray.push(event.target.dataset.product).toString();
-
-        // console.log(cartArray);
 
         const itemToAdd = data.find(
           (item) => item.id === parseInt(event.target.dataset.product)
