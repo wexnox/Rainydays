@@ -47,7 +47,7 @@ function showCart(cartItems) {
   cartList.innerHTML = " ";
   let total = 0;
   cartItems.forEach(function (cartElement) {
-    total += cartElement.price_html;
+    // total += cartElement.price_html;
     cartList.innerHTML += `
             <div class="cart-item">
             <h4>${cartElement.name}</h4>
