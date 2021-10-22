@@ -20,22 +20,27 @@ getProducts().then((productList) => {
             <button class="product-button" data-product="${product.id}">Add to cart</button>
         </div>`;
   });
+
   const buttons = document.querySelectorAll("button");
   buttons.forEach(function (button) {
     button.onclick = function (event) {
       console.log(productList);
       console.log(event.target);
+      console.log(event.target.dataset);
+      console.log(event.target.dataset.product);
 
+      // addToCart();
       const itemToAdd = productList.find(
-        (item) => item.id === event.target.dataset
+        (product) => product.id === event.target.dataset.product
       );
-
       cartArray.push(itemToAdd);
-      showCart(cartArray);
+      // showCart(cartArray);
       localStorage.setItem("cartList", JSON.stringify(cartArray));
     };
   });
 });
+
+// function addToCart(id) {}
 
 function showCart(cartItems) {
   cart.style.display = "flex";
