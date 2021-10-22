@@ -5,6 +5,8 @@ const id = params.get("id");
 
 export async function getProducts() {
   let response = await fetch(url);
-  return await response.json();
+  let data = await response.json();
+  let products = data.items;
+  return products;
 }
 //# sourceMappingURL=api.js.map
