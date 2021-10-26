@@ -29,14 +29,14 @@ async function getProducts() {
     const buttons = document.querySelectorAll("button");
     buttons.forEach(function (button) {
       button.onclick = function (event) {
-        console.log(data);
+        
 
         const itemToAdd = data.find(
           (item) => item.id === parseInt(event.target.dataset.product)
         );
 
         cartArray.push(itemToAdd);
-        showCart(cartArray);
+        // showCart(cartArray);
         localStorage.setItem("cartList", JSON.stringify(cartArray));
       };
     });
