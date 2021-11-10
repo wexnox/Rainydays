@@ -29,14 +29,12 @@ async function getProducts() {
     const buttons = document.querySelectorAll("button");
     buttons.forEach(function (button) {
       button.onclick = function (event) {
-        
-
         const itemToAdd = data.find(
           (item) => item.id === parseInt(event.target.dataset.product)
         );
 
         cartArray.push(itemToAdd);
-        // showCart(cartArray);
+        showCart(cartArray);
         localStorage.setItem("cartList", JSON.stringify(cartArray));
       };
     });
@@ -47,15 +45,13 @@ async function getProducts() {
 getProducts();
 
 function showCart(cartItems) {
-  cart.style.display = "flex";
-  cartList.innerHTML = " ";
   let total = 0;
   cartItems.forEach(function (cartElement) {
     total += parseInt(cartElement.prices.price);
     cartList.innerHTML += `
             <div class="cart-item">
             <h4>${cartElement.name}</h4>
-            <div style="background-image: url(${cartElement.image})" class="cart-image"></div>
+            <div style="background-image: url(${cartElement.images[0].src})" class="cart-image"></div>
             </div>`;
   });
   totalContainer.innerHTML = `Total: ${total}`;

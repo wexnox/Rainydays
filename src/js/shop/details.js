@@ -1,12 +1,12 @@
-const params = new URLSearchParams(document.location.search);
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-async function getProduct(productId) {
+const url =
+  "http://api.rainydays.noroff.wexox.no/wp-json/wc/store/products/" + id;
+async function getProduct() {
   try {
-    const response = await fetch(
-      "http://api.rainydays.noroff.wexox.no/wp-json/wc/store/products/" +
-        productId
-    );
+    const response = await fetch(url);
     const results = await response.json();
     const details = results;
     document.title = details.name;

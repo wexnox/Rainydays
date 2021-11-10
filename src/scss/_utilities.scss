@@ -4,6 +4,26 @@
   margin: 0 auto;
   overflow: auto;
 }
+// .container {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: center;
+//   margin-top: 5%;
+//   flex-flow: column wrap;
+// }
+
+.container-item {
+  display: flex;
+  flex-direction: column;
+}
+.container-item > h1,
+p {
+  display: flex;
+  justify-content: center;
+  max-width: 60%;
+  align-self: center;
+}
 
 // Margin & padding classes
 // $spaceamounts: (1, 2, 3, 4, 5);
@@ -31,26 +51,6 @@
   margin-top: 2px;
 }
 
-// .container {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: center;
-//   margin-top: 5%;
-//   flex-flow: column wrap;
-// }
-
-.container-item {
-  display: flex;
-  flex-direction: column;
-}
-.container-item > h1,
-p {
-  display: flex;
-  justify-content: center;
-  max-width: 60%;
-  align-self: center;
-}
 .content {
   flex: 1 0 auto;
   padding: 20px;
