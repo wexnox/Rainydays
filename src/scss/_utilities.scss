@@ -4,54 +4,23 @@
   margin: 0 auto;
   overflow: auto;
 }
-// .container {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: center;
-//   margin-top: 5%;
-//   flex-flow: column wrap;
-// }
-
-.container-item {
-  display: flex;
-  flex-direction: column;
-}
-.container-item > h1,
-p {
+.flex-container {
   display: flex;
   justify-content: center;
-  max-width: 60%;
-  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  flex-flow: column wrap;
 }
 
-// Margin & padding classes
-// $spaceamounts: (1, 2, 3, 4, 5);
-
-// @each $space in $spaceamounts {
-//   .m-#{$space} {
-//     margin: #{$space}rem;
-//   }
-//   .my-#{$space} {
-//     margin: #{$space}rem 0;
-//   }
-
-//   .p-#{$space} {
-//     padding: #{$space}rem;
-//   }
-//   .py-#{$space} {
-//     padding: #{$space}rem 0;
-//   }
-// }
+// not in use
+.content {
+  flex: 0 1 10vh;
+}
 
 .form-error {
   display: none;
   color: red;
   font-size: 0.9rem;
   margin-top: 2px;
-}
-
-.content {
-  flex: 1 0 auto;
-  padding: 20px;
 }

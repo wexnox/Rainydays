@@ -113,8 +113,8 @@ exports.default = series(
   copyHtml,
   scssTask,
   jsTask,
-  // optimizeimg,
-  // webpImage,
+  optimizeimg,
+  webpImage,
   browsersyncServe,
   watchTask
 );
