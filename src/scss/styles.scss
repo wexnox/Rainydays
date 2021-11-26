@@ -138,6 +138,17 @@ footer {
   filter: drop-shadow(0px 5px 3px black);
   animation: drop 1.5s ease;
 }
+.cover__about {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+}
+.cover__about img {
+  height: 100%;
+  animation: drop 1.5s ease;
+  border-radius: 4px7;
+}
 
 /* Contact form END */
 

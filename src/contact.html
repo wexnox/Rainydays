@@ -32,13 +32,40 @@
   <body>
     <header>
       <nav>
-        <h1 class="logo">Rainydays</h1>
+        <a href="http://#">
+          <picture>
+            <source
+              media="(max-width: 1024px)"
+              srcset="./assets/images/RainyDays_Logo2.webp"
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 768px)"
+              srcset="./assets/images/RainyDays_Logo2.png"
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 360px)"
+              srcset="./assets/images/RainyDays_Logo2.png"
+              type="image/webp"
+            />
+            <img
+              class="logo"
+              src="./assets/images/RainyDays_Logo2.png"
+              alt="Rainydays"
+              loading="lazy"
+            />
+          </picture>
+        </a>
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+        <!-- <form action="">
+          <input type="search" name="query" id="query" placeholder="Search">
+        </form> -->
         <div class="nav-cart">
           <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
         </div>
@@ -137,10 +164,21 @@
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-links">
+    <footer>
+      <div class="legal">
+        <a href="http://#">Copyright<i class="far fa-copyright"></i></a>
+        <a href="http://#">Privacy Policy</a>
+        <a href="http://#">Terms of Use</a>
+      </div>
+      <div class="contact">
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
+      </div>
+      <div class="social">
+        <a href="http://#"><i class="fab fa-facebook"></i>Facebook</a>
+        <a href="http://#"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="http://#"><i class="fab fa-youtube"></i>Youtube</a>
+        <a href="http://#"><i class="fab fa-instagram"></i>Instagram</a>
       </div>
     </footer>
     <script src="./assets/js/hamburger.js"></script>
