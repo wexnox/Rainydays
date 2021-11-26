@@ -3,7 +3,7 @@
 .products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  max-width: 800px;
+  max-width: 80%;
   margin: 0 auto;
 }
 .product {
@@ -22,6 +22,7 @@
 }
 .product-image {
   background-size: cover;
+  background-position: center;
   height: 150px;
   border-radius: 0px 20px;
 }
@@ -38,4 +39,10 @@
 
 .product-button:hover {
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .products {
+    max-width: 80%;
+    grid-template-columns: 1fr;
+  }
 }

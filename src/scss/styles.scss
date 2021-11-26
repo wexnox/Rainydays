@@ -1,3 +1,4 @@
+@import "resets";
 @import "config";
 @import "utilities";
 @import "buttons";
@@ -46,9 +47,6 @@ select {
   cursor: inherit;
   line-height: inherit;
 }
-// select:hover {
-//   background-color: $light-color;
-// }
 
 option {
   background-color: $light-color;
