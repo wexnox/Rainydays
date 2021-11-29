@@ -9,9 +9,11 @@ let cartArray = [];
 productArray.forEach(function (product) {
   productsContainer.innerHTML += `
   <div class="product">
+  <a href="details.html?id${product.id}">
     <h2>${product.name}</h2>
       <p>${product.description}</p>
     <div style="background-image: url(${product.image})" class="product-image"></div>
+    </a>
     <div class="product-price">${product.price}</div>
     <button class="product-button" data-product="${product.id}">Add to cart</button>
   </div> `;

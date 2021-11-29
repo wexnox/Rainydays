@@ -7,19 +7,17 @@
 @import "mobile";
 @import "nav";
 @import "product";
+@import "typografi";
 
-@function weight($weight-name) {
-  @return map-get($font-weights, $weight-name);
-}
+// @function weight($weight-name) {
+//   @return map-get($font-weights, $weight-name);
+// }
 html,
 body {
   height: 100%;
 }
 body {
   background-color: $light-color;
-  font-family: $font-stack;
-  line-height: 1.6;
-  font-weight: map-get($font-weights, medium);
   display: flex; // move to layout
   flex-direction: column; // move to layout
   overflow-x: hidden; // move to layout
@@ -38,14 +36,10 @@ select {
   border: 2px solid $btn-secondary;
   text-align: center;
   padding: 0 1em 0 0;
-  // margin: 0;
   width: 9.375rem;
   height: 3.125rem;
   color: $btn-secondary;
-  font-family: inherit;
-  font-size: inherit;
   cursor: inherit;
-  line-height: inherit;
 }
 
 option {
@@ -67,7 +61,6 @@ footer {
   padding-top: 2vh;
   min-height: fit-content;
   gap: 1em;
-  font-weight: map-get($font-weights, bold);
   background: rgb(244, 244, 244);
   background: linear-gradient(
     180deg,
@@ -109,8 +102,6 @@ footer {
   flex-direction: column;
 }
 .intro-text h1 {
-  font-size: 2.75rem;
-  font-weight: 500;
   background: linear-gradient(to right, $gradientA, $gradientB);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -120,7 +111,6 @@ footer {
   flex-wrap: wrap nowrap;
   justify-content: center;
   margin-top: 5px;
-  font-size: 22px;
   color: $darker-color;
   width: 90%;
 }
@@ -168,9 +158,6 @@ footer {
   .introduction {
     margin-top: 5vh;
     text-align: center;
-  }
-  .intro-text {
-    // justify-content: center;
   }
   .intro-text h1 {
     font-size: 1.875rem;

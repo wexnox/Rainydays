@@ -1,0 +1,30 @@
+// TODO: Move everything related to typografi here
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  font-weight: map-get($font-weights, medium);
+}
+
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+footer {
+  font-weight: map-get($font-weights, bold);
+}
+.product-price {
+  font-weight: map-get($font-weights, light);
+}
+.intro-text h1 {
+  font-size: 2.75rem;
+  font-weight: map-get($font-weights, medium);
+}
+.intro-text p {
+  font-size: 22px;
+}

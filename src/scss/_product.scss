@@ -28,7 +28,13 @@
   height: 150px;
   border-radius: 0px 20px;
 }
-
+// TODO: CHANGE MEEEE!
+.product-price {
+  color: $btn-primary;
+}
+.product__image {
+  max-width: 40vh;
+}
 @media screen and (max-width: 1024px) {
   .products {
     grid-template-columns: 1fr 1fr 1fr;
@@ -38,5 +44,12 @@
 @media screen and (max-width: 768px) {
   .products {
     grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 360px) {
+  .products {
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 }
