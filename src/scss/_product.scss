@@ -3,9 +3,10 @@
 .products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 80%;
+  // max-width: 80%;
   margin: 0 auto;
   padding: 4rem;
+  grid-auto-flow: row;
 }
 .product {
   margin: 20px;
@@ -28,10 +29,14 @@
   border-radius: 0px 20px;
 }
 
+@media screen and (max-width: 1024px) {
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .products {
-    max-width: 80%;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
