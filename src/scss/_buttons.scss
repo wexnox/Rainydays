@@ -1,4 +1,6 @@
 // _buttons.scss
+// TODO: Setup inheritance
+
 button {
   background: #81bb85e0;
   border: none;
@@ -39,4 +41,18 @@ button {
 
 .cta {
   padding-top: 3rem;
+}
+
+.product-button {
+  background: #81bb85e0;
+  border: 0px;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0px;
+  transition: all 1s;
+  font-weight: bold;
+}
+
+.product-button:hover {
+  cursor: pointer;
 }

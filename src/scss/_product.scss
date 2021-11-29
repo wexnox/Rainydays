@@ -2,9 +2,10 @@
 
 .products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 80%;
   margin: 0 auto;
+  padding: 4rem;
 }
 .product {
   margin: 20px;
@@ -27,19 +28,7 @@
   border-radius: 0px 20px;
 }
 
-.product-button {
-  background: #81bb85e0;
-  border: 0px;
-  width: 100%;
-  padding: 10px;
-  margin: 20px 0px;
-  transition: all 1s;
-  font-weight: bold;
-}
 
-.product-button:hover {
-  cursor: pointer;
-}
 @media screen and (max-width: 768px) {
   .products {
     max-width: 80%;
