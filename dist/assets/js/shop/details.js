@@ -3,31 +3,41 @@ const detailsContainer = document.querySelector(".product__details__container");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const url = "http://rainydays.wexox.no/details.html?" + id;
+console.log(params);
+
 console.log(id);
-console.log(url);
 
-async function fetchDetails() {
+const url = "https://rainydays.wexox.no/" + id;
+
+async function fetchFilm() {
   try {
-    // const response = await fetch(url);
-    // const details = await response.text();
-    // console.log(details);
-    console.log(id);
+    const response = await fetch(url);
 
-    // createHtml(details);
+    const details = await response.json();
+    console.log(details);
+
+    const product = details;
+    console.log(fproduct);
+    document.title = product.properties.title;
+    createHtml(fproduct);
   } catch (error) {
     console.log(error);
     // detailsContainer.innerHTML = message("error", error);
   }
 }
 
-fetchDetails();
+fetchFilm();
 
-// function createHtml(details) {
-//   detailsContainer.innerHTML = ` <h2>${details.name}</h2>
-//                                 <a href="${details.id}"> Link to movie</a></p>
-//                                 <h4>Opening crawl:</h4>
-//                                 <p>${details.description}</p>
-//                                 `;
-// }
+function createHtml(product) {
+  detailsContainer.innerHTML += `
+    <div class="product">
+  <a href="details.html?id${product.id}">
+    <h2>${product.name}</h2>
+      <p>${product.description}</p>
+    <div style="background-image: url(${product.image})" class="product-image"></div>
+    </a>
+    <div class="product-price">${product.price}</div>
+    <button class="product-button" data-product="${product.id}">Add to cart</button>
+  </div> `;
+}
 //# sourceMappingURL=details.js.map
