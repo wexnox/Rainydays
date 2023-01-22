@@ -17,14 +17,21 @@ async function getProducts() {
     productsContainer.innerHTML = "";
 
     json.forEach(function(product) {
-      productsContainer.innerHTML += `<div class="preview-products">
-			<a href="details.html?id=${product.id}"><h2>${product.name}</h2></a>
-<!--			<a href="${product.permalink}"><h2>${product.title}</h2></a>-->
-			<div class="card">
-			<img src="${product.images[0].src}" />
-			<p>Price : ${product.prices.price}</p>
-			
-			</div>`
+      productsContainer.innerHTML += `
+<div class="product">
+    <a href="details.html?id=${product.id}"><h2>${product.name}</h2>
+        <p>${product.description}</p>
+         <div style="background-image: url(${product.images[0].src})" class="product-image"></div>
+    </a>
+   <div>  
+       <p>Price: </p>
+            <div class="product-price">
+           ${product.prices.price}  ${product.prices.currency_symbol}
+            </div>
+   </div>
+   <button class="product-button" data-product="${product.id}">Add to cart</button>
+</div>
+`
 
     })
   } catch (error) {
