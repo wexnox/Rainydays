@@ -1,4 +1,7 @@
-import { productArray } from "/assets/js/constants/productList.js";
+// import { productArray } from "/assets/js/constants/productList.js";
+
+const url = 'http://api.rainydays.wexox.no/wp-json/wc/store/products'
+
 const productsContainer = document.querySelector(".products");
 const cart = document.querySelector(".cart");
 const cartList = document.querySelector(".cart-list");
@@ -6,22 +9,48 @@ const totalContainer = document.querySelector(".total");
 
 let cartArray = [];
 
-productArray.forEach(function (product) {
-  productsContainer.innerHTML += `
-  <div class="product">
-  
-    <h2>${product.name}</h2>
-    <p>${product.description}</p>
-    <div style="background-image: url(${product.image})" class="product-image"></div>
-    <div>
-      <p>Price: </p>
-        <div class="product-price">
-          ${product.price}
-        </div>
-    </div>
-    <button class="product-button" data-product="${product.id}">Add to cart</button>
-  </div> `;
-});
+async function getProducts() {
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json);
+    productsContainer.innerHTML = "";
+
+    json.forEach(function(product) {
+      productsContainer.innerHTML += `<div class="preview-products">
+			<a href="details.html?id=${product.id}"><h2>${product.name}</h2></a>
+<!--			<a href="${product.permalink}"><h2>${product.title}</h2></a>-->
+			<div class="card">
+			<img src="${product.images[0].src}" />
+			<p>Price : ${product.prices.price}</p>
+			
+			</div>`
+
+    })
+  } catch (error) {
+    console.log(error);
+    productsContainer.innerHTML = alert("error", error);
+  }
+}
+getProducts();
+
+//
+// productArray.forEach(function (product) {
+//   productsContainer.innerHTML += `
+//   <div class="product">
+//
+//     <h2>${product.name}</h2>
+//     <p>${product.description}</p>
+//     <div style="background-image: url(${product.image})" class="product-image"></div>
+//     <div>
+//       <p>Price: </p>
+//         <div class="product-price">
+//           ${product.price}
+//         </div>
+//     </div>
+//     <button class="product-button" data-product="${product.id}">Add to cart</button>
+//   </div> `;
+// });
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach(function (button) {

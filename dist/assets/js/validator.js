@@ -15,6 +15,11 @@ const emailError = document.querySelector("#emailError");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
 
+/**
+ *
+ * @param event
+ * @param {Event} event
+ */
 function validateForm(event) {
   // prevent reload flash
   event.preventDefault();
@@ -53,9 +58,17 @@ function validateForm(event) {
   }
 }
 
+/**
+ *
+ */
 form.addEventListener("submit", validateForm);
 
-// Length validator & trim
+/**
+ * Length validator & trim
+ * @param value
+ * @param len
+ * @returns {boolean}
+ */
 function checkLength(value, len) {
   if (value.trim().length > len) {
     return true;
@@ -64,7 +77,12 @@ function checkLength(value, len) {
   }
 }
 
-// email validator
+/**
+ * email validator
+ * @param email
+ * @returns {boolean}
+ * @param {string} email
+ */
 function validateEmail(email) {
   const regEx = /\S+@\S+\.\S+/;
   const patternMatches = regEx.test(email);

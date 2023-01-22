@@ -28,4 +28,3 @@ function createHTML(product) {
 		<p>Price: ${product.prices.price}</p>`
 
 }
-//# sourceMappingURL=details.js.map

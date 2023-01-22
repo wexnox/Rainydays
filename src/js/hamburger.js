@@ -19,5 +19,3 @@ const navSlide = () => {
 };
 
 navSlide();
-
-// TODO: fix _nav.scss

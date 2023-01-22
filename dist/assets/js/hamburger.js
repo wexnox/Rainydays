@@ -19,6 +19,4 @@ const navSlide = () => {
 };
 
 navSlide();
-
-// TODO: fix _nav.scss
 //# sourceMappingURL=hamburger.js.map

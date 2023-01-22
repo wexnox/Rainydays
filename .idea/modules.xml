@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Rainydays.iml" filepath="$PROJECT_DIR$/.idea/Rainydays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Templets/.idea/Templets.iml" filepath="$PROJECT_DIR$/../../Templets/.idea/Templets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Development/SourceCode/Backup/Robin/rainydays-main/rainydays-main/.idea/rainydays-main.iml" filepath="$PROJECT_DIR$/../../../Development/SourceCode/Backup/Robin/rainydays-main/rainydays-main/.idea/rainydays-main.iml" />
     </modules>
   </component>
 </project>

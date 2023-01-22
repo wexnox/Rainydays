@@ -11,5 +11,7 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="all" level="application" />
     <orderEntry type="library" name="jquery-3.5.1" level="application" />
+    <orderEntry type="module" module-name="Templets" />
+    <orderEntry type="module" module-name="rainydays-main" />
   </component>
 </module>
