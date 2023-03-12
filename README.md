@@ -1,6 +1,6 @@
 # Your project title
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](https://ik.imagekit.io/sorian/Rainydays/Screenshot_2023-03-12_at_14-44-56_Rainydays_etVrfrBmS.png?updatedAt=1678631403166)
 
 An online shop selling men's and women’s rain jackets. They are designed for a range of different outdoor activities such as hiking.
 
