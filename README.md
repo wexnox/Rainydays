@@ -30,6 +30,12 @@ The jackets are mid-range in price and emphasize durability and being suitable f
 -   About
 -   Contact
 
+## Built With
+
+- [HTML](https://vitejs.dev)
+- [JavaScript](https://vitejs.dev)
+- [CSS](https://vitejs.dev)
+- [Scss](https://sass-lang.com)
 
 ## Getting Started
 
