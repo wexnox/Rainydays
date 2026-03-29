@@ -31,15 +31,14 @@
 
 .presentation {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   max-width: 90%;
   min-height: 80vh;
   margin: auto;
 }
-.introduction {
+.presentation__bottom {
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  align-items: center;
 }
 .intro-text h1 {
   //background: linear-gradient(to right, $color-gradientA, $color-gradientB);
@@ -93,10 +92,10 @@
     width: 60%;
     justify-content: space-around;
   }
-  .presentation {
+  .presentation__bottom {
     flex-direction: column;
   }
-  .introduction {
+  .intro-text {
     margin-top: 5vh;
     text-align: center;
   }
@@ -147,10 +146,10 @@
 }
 
 @media screen and (max-width: 360px) {
-  .presentation {
+  .presentation__bottom {
     flex-direction: column;
   }
-  .introduction {
+  .intro-text {
     margin-top: 5vh;
     text-align: center;
   }
