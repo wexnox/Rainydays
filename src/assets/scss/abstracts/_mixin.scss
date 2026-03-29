@@ -1,0 +1,52 @@
+@use "variables" as *;
+@use "functions" as *;
+
+//https://sass-lang.com/documentation/values/maps
+//https://sass-lang.com/documentation/at-rules/mixin
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+// status button colors
+@mixin button-style($button-color) {
+  border: 1px solid $button-color;
+  background: $button-color;
+}
+//https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+//https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704
+@mixin mediaq($breakpoint) {
+  @if $breakpoint == tablet-portrait {
+    @media (min-width: $breakpoint-tablet-portrait) {
+      @content
+    }
+  }
+  @if $breakpoint == tablet-landscape {
+    @media (min-width: $breakpoint-tablet-landscape) {
+      @content
+    }
+  }
+  @if $breakpoint == laptop {
+    @media (min-width: $breakpoint-laptop) {
+      @content
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+  @if $breakpoint == widescreen {
+    @media (min-width: $breakpoint-widescreen) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@use "../abstracts" as *;
+.container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.content {
+  flex: 1 1 10vh;
+  padding-bottom: 1vh; // TODO: sort this one needs to go into media
+
+}
+
+.scrolly {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+
+  scroll-snap-align: start;
+
+  h1 {
+    font-size: $font-size-heading;
+    margin-bottom: 1rem;
+    color: $color-white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  p {
+    max-width: 600px;
+    font-size: $font-size-small;
+    line-height: $font-line-height-default;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+  }
+
+  blockquote {
+    max-width: 550px;
+    font-style: italic;
+    font-size: $font-size-small;
+    line-height: $font-line-height-default;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
+    border-left: 3px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+%form {
+  display: none;
+  font-size: $font-size-small;
+  margin-top: 2px;
+}
+
+.form-error {
+  @extend %form;
+  color: $color-error;
+}
+.form-success {
+  @extend %form;
+ color: $color-success;
+}
+.form-warning {
+  @extend %form;
+  color: $color-warning;
+}
+
+.one {
+  background: linear-gradient(135deg, rgba(0, 80, 60, 0.7), rgba(0, 60, 80, 0.7)),
+    url("https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+}
+.two {
+  background: linear-gradient(135deg, rgba(20, 60, 90, 0.75), rgba(30, 80, 100, 0.7)),
+    url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+}
+.three {
+  background: linear-gradient(135deg, rgba(20, 70, 40, 0.75), rgba(30, 80, 50, 0.7)),
+    url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+}
+.fourth {
+  background: linear-gradient(135deg, rgba(30, 40, 70, 0.75), rgba(40, 50, 80, 0.7)),
+    url("https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+}
+.fith {
+  background: linear-gradient(135deg, rgba(0, 60, 70, 0.7), rgba(20, 80, 80, 0.7)),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+}

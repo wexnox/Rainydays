@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+nav {
+  display: flex;
+  min-height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $color-background;
+
+}
+
+.user__nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+
+  div {
+    width: 25px;
+    height: 4px;
+    background-color: $color-primary;
+    margin: 4px;
+    transition: all 0.7s ease;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}

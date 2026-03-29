@@ -1,0 +1,60 @@
+@use "../abstracts" as *;
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input {
+  width: 100%;
+  margin-top: 2px;
+  padding: 10px;
+  font-size: 16px;
+}
+input:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 10px #d3c8c8;
+}
+
+form {
+  padding: 2em;
+  background: transparent;
+  border-radius: 1rem;
+}
+
+input[type=text],
+textarea {
+  display: block;
+  width: 100%;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 2px 0px 2px 2px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #aeb5bf;
+}
+input[type=text]:focus,
+textarea:focus {
+  box-shadow: 0 0 10px #d3c8c8;
+  padding: 2px 0px 2px 2px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+select {
+  background-color: transparent;
+  border: 2px solid $btn-secondary;
+  text-align: center;
+  padding: 0 1em 0 0;
+  width: 9.375rem;
+  height: 3.125rem;
+  color: $btn-secondary;
+  cursor: inherit;
+}
+
+option {
+  background-color: $color-background;
+}
+option:hover {
+  color: chartreuse;
+  background-color: blueviolet;
+}

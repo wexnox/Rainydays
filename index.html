@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <title>Rainydays</title>
+    <!-- Styles -->
+    <link
+            crossorigin="anonymous"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            rel="stylesheet"
+    />
+    <link href="data:;base64,=" rel="icon"/>
+</head>
+
+<body>
+<header>
+    <nav>
+        <a href="http://#">
+            <picture>
+                <source
+                        media="(max-width: 1024px)"
+                        srcset="src/assets/images/RainyDays_Logo2.webp"
+                        type="image/webp"
+                />
+                <source
+                        media="(max-width: 768px)"
+                        srcset="src/assets/images/RainyDays_Logo2.png"
+                        type="image/webp"
+                />
+                <source
+                        media="(max-width: 360px)"
+                        srcset="src/assets/images/RainyDays_Logo2.png"
+                        type="image/webp"
+                />
+                <img
+                        alt="Rainydays"
+                        class="logo"
+                        loading="lazy"
+                        src="src/assets/images/RainyDays_Logo2.png"
+                />
+            </picture>
+        </a>
+        <ul class="nav-links">
+            <li><a href="/public">Home</a></li>
+            <li><a href="src/products.html">Products</a></li>
+            <li><a href="src/about.html">About Us</a></li>
+            <li><a href="src/contact.html">Contact</a></li>
+        </ul>
+
+        <!--TODO: Setup search-->
+        <!--        <form action="">-->
+        <!--            <input type="search" name="query" id="query" placeholder="Search">-->
+        <!--        </form>-->
+
+        <div class="user__nav">
+            <div class="nav-cart">
+                <a href="src/cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="content">
+    <div class="container">
+        <section class="hero scrolly">
+            <div class="hero-text">
+                <h1>Pushing The Comfort Zone Since</h1>
+                <h1>1967</h1>
+            </div>
+        </section>
+
+        <section class="presentation scrolly">
+            <div class="introduction">
+                <div class="intro-text">
+                    <h1>Premium jackets for the future</h1>
+                    <p>
+                        The new line of jargon Lorem ipsum dolor, sit amet consectetur
+                        adipisicing elit. Repudiandae, voluptas.
+                    </p>
+                </div>
+                <!-- TODO: set dropdown -->
+                <div class="cta">
+                    <form action="/" method="post">
+                        <select id="size" name="size" required>
+                            <option disabled hidden selected value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="L">Large</option>
+                            <option value="M">Medium</option>
+                        </select>
+                        <button class="btn btn-primary">Add To Cart</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="cover">
+                <img
+                        alt="rainjacket"
+                        src="src/assets/images/yellow-toppng.com-lined-pvc-rain-jacket-yellow-raincoat-854x1168.png"
+                />
+            </div>
+        </section>
+
+        <section class="one scrolly">
+            <h1>Our Bestsellers</h1>
+            <p>
+                Discover our most popular rain jackets, trusted by adventurers worldwide.
+                From lightweight city commuters to heavy-duty mountain gear, our bestsellers
+                are designed to keep you dry and comfortable no matter the weather.
+            </p>
+            <a href="src/products.html" class="btn btn-primary">Shop Bestsellers</a>
+        </section>
+        <section class="two scrolly">
+            <h1>Built for Adventure</h1>
+            <p>
+                Every Rainydays jacket is crafted with premium waterproof materials and
+                breathable fabrics. Whether you're hiking through a storm or cycling to work,
+                our gear moves with you and keeps the rain out.
+            </p>
+        </section>
+        <section class="three scrolly">
+            <h1>Sustainability</h1>
+            <p>
+                We believe in protecting the planet as much as protecting you from the rain.
+                Our jackets are made with recycled materials and eco-friendly production methods,
+                reducing our environmental footprint one jacket at a time.
+            </p>
+        </section>
+        <section class="fourth scrolly">
+            <h1>What Our Customers Say</h1>
+            <blockquote>
+                "I've worn my Rainydays jacket through three Norwegian winters and it still
+                looks and performs like new. Best investment I've ever made!"
+            </blockquote>
+            <p>— Maria S., Bergen</p>
+            <blockquote>
+                "Lightweight, stylish, and completely waterproof. I wear it every day on my
+                commute."
+            </blockquote>
+            <p>— Erik T., Oslo</p>
+        </section>
+        <section class="fith scrolly">
+            <h1>Join the Rainydays Community</h1>
+            <p>
+                Sign up for our newsletter and get 10% off your first order. Be the first to
+                hear about new arrivals, exclusive deals, and outdoor tips from our team.
+            </p>
+            <a href="src/contact.html" class="btn btn-primary">Get in Touch</a>
+        </section>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container__footer">
+        <a href="http://#">Copyright<i class="far fa-copyright"></i></a>
+        <a href="http://#">Privacy Policy</a>
+        <a href="http://#">Terms of Use</a>
+    </div>
+    <div class="container__footer">
+        <a href="src/about.html">About Us</a>
+        <a href="src/contact.html">Contact</a>
+    </div>
+    <div class="container__footer">
+        <a href="http://#"><i class="fab fa-facebook"></i>Facebook</a>
+        <a href="http://#"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="http://#"><i class="fab fa-youtube"></i>Youtube</a>
+        <a href="http://#"><i class="fab fa-instagram"></i>Instagram</a>
+    </div>
+</footer>
+<script src="src/assets/js/hamburger.js" type="module"></script>
+<script type="module" src="/main.js"></script>
+</body>
+</html>

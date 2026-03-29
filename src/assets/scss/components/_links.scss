@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+a {
+  color: #5f5f79;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: $color-primary;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 5px;
+  }
+
+  a:hover {
+    color: $btn-primary; // TODO: set color
+  }
+
+  a:after {
+    background-color: $btn-primary;
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+    flex: -1;
+  }
+
+  a:hover:after {
+    width: 100%;
+  }
+}

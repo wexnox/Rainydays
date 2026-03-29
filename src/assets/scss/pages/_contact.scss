@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+.contact__presentation {
+  @include flex-column;
+  align-items: center;
+  min-height: fit-content;
+  margin: auto;
+
+  @include mediaq(desktop) {
+    @include flex-row;
+    min-height: 60vh;
+    max-height: max-content;
+    max-width: 80%;
+  }
+}
+
+.introduction {
+  @include flex-column;
+  min-height: fit-content;
+  margin: auto;
+  padding: 2em;
+  width: 90%;
+
+  @include mediaq(desktop) {
+    width: 40%;
+    justify-content: center;
+    align-self: center;
+    min-height: 80vh;
+  }
+
+}
+
+.contact-hero--text {
+  color: white;
+  margin-top: 1rem;
+
+  @include mediaq(desktop) {
+    margin-top: 2rem;
+  }
+}
+
+.social-contact {
+  padding-top: 2em;
+
+}
+
+.contract--form {
+
+}
+

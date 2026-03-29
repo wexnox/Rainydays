@@ -1,0 +1,66 @@
+@use "../abstracts" as *;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  @include mediaq(desktop) {
+    padding-top: 2em;
+  }
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+
+  @include mediaq(desktop) {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  @include flex-column;
+  border-radius: 0.25rem;
+  box-shadow: $box-shadow-card;
+  overflow: hidden;
+
+  @include mediaq(desktop) {
+    justify-content: flex-end;
+  }
+
+}
+
+.card_content {
+  padding: 1rem;
+
+}
+
+.card_title {
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 1rem;
+}
+
+.card_text {
+  margin-bottom: 1.25rem;
+
+}
+
+.occupation {
+  font-size: $font-size-small;
+  text-align: right;
+  margin-bottom: 0.5em;
+}
+
+.card_image {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+
+  & img {
+    @include mediaq(desktop) {
+      //width: 200px;
+
+    }
+  }
+}
