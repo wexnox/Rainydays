@@ -1,9 +1,11 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import path from "path";
-import eslint from "vite-plugin-eslint";
 
 import.meta.dirname;
+import eslint from "vite-plugin-eslint";
+
+
 export default defineConfig({
   build: {
     // outDir: path.resolve(__dirname, 'dist/'),
