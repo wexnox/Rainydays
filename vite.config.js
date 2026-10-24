@@ -38,9 +38,7 @@ export default defineConfig({
     alias: {
       "~bootstrap": path.resolve("node_modules/bootstrap")
     }
-  },
-  server: {
-    hot: true
   }
+
 
 });
