@@ -3,18 +3,19 @@ import { defineConfig } from "vite";
 import path from "path";
 import eslint from "vite-plugin-eslint";
 
+import.meta.dirname;
 export default defineConfig({
   build: {
     // outDir: path.resolve(__dirname, 'dist/'),
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        about: resolve(__dirname, "/src/about.html"),
-        cart: resolve(__dirname, "/src/cart.html"),
-        contact: resolve(__dirname, "/src/contact.html"),
-        details: resolve(__dirname, "/src/details.html"),
-        main: resolve(__dirname, "index.html"),
-        products: resolve(__dirname, "/src/products.html")
+        about: resolve("/src/about.html"),
+        cart: resolve("/src/cart.html"),
+        contact: resolve("/src/contact.html"),
+        details: resolve("/src/details.html"),
+        main: resolve("index.html"),
+        products: resolve("/src/products.html")
       }
     },
     sourcemap: true
@@ -35,7 +36,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "~bootstrap": path.resolve(__dirname, "node_modules/bootstrap")
+      "~bootstrap": path.resolve("node_modules/bootstrap")
     }
   },
   server: {
