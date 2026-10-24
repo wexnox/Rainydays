@@ -1,39 +1,37 @@
-const detailsContainer = document.querySelector(".product")
+import { productArray } from "../constants/productList.js";
+
+const detailsContainer = document.querySelector(".product");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-async function getProduct(id) {
-    try {
-        const url = "http://api.rainydays.wexox.no/wp-json/wc/store/products/" + id;
-        console.log(url);
+function getProduct(id) {
+    const product = productArray.find((item) => item.id === id);
 
-        const response = await fetch(url);
-        const product = await response.json();
-
-        document.title = product.name;
-        createHTML(product);
-    } catch {
-
-        // detailsContainer.innerHTML = displayMessage("error");
+    if (!product) {
+        detailsContainer.innerHTML = `<p>Product not found</p>`;
+        return;
     }
+
+    document.title = product.name;
+    createHTML(product);
 }
 
 getProduct(id);
-// TODO: Styling
+
 function createHTML(product) {
     detailsContainer.innerHTML =
         `
-<div class="product">
-    <h2>${product.name}</h2>
-	    <p>Description: ${product.description}</p>
-	<div style="background-image: url(${product.images[0].src})" class="product-image"></div>
-   <div>  
-        <p>Price: </p>
-        <div class="product-price">${product.prices.price}  ${product.prices.currency_symbol}</div>
-   </div>
-   <button class="product-button" data-product="${product.id}">Add to cart</button>
-</div>
-`
-
+<article class="product-detail">
+    <div class="product-image">
+        <img src="${product.image}" alt="${product.name} - ${product.description}" />
+    </div>
+    <div class="product-detail-info">
+        <h1>${product.name}</h1>
+        <p class="product-description">${product.description}</p>
+        <p class="product-price"><span class="sr-only">Pris: </span>${product.price} NOK</p>
+        <button class="product-button" aria-label="Legg ${product.name} i handlekurv" data-product="${product.id}">Add to cart</button>
+    </div>
+</article>
+`;
 }
