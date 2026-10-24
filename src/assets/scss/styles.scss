@@ -27,6 +27,7 @@
 @use "pages/about";
 @use "pages/contact";
 @use "pages/cart";
+@use "pages/product";
 
 
 .presentation {
@@ -66,17 +67,6 @@
   filter: drop-shadow(0px 5px 3px black);
   animation: drop 1.5s ease;
 }
-.cover__about {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  height: 60vh;
-}
-.cover__about img {
-  height: 55vh;
-  animation: drop 1.5s ease;
-  border-radius: 0px 20px;
-}
 .cover__contact {
   flex: 1;
   display: flex;
@@ -110,9 +100,6 @@
   .cover img {
     max-width: 40vw;
   }
-  .cover__about img {
-    max-height: 60vh;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -140,9 +127,6 @@
   .cover img {
     height: auto;
   }
-  .cover__about img {
-    max-height: 40vh;
-  }
 }
 
 @media screen and (max-width: 360px) {
@@ -161,9 +145,6 @@
   }
   .cover img {
     height: auto;
-  }
-  .cover__about img {
-    max-height: 20vh;
   }
 }
 

@@ -1,66 +1,47 @@
 @use "../abstracts" as *;
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
 
-  @include mediaq(desktop) {
-    padding-top: 2em;
-  }
-}
-
-.cards_item {
-  display: flex;
-  padding: 1rem;
-
-  @include mediaq(desktop) {
-    width: 33.3333%;
-  }
-}
-
-.card {
+.about__presentation {
   @include flex-column;
-  border-radius: 0.25rem;
-  box-shadow: $box-shadow-card;
-  overflow: hidden;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 4rem;
+  padding: 0 2rem;
 
   @include mediaq(desktop) {
-    justify-content: flex-end;
+    @include flex-row;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.about__text {
+  flex: 1;
+
+  h1 {
+    font-size: 2rem;
+    color: $color-primary-dark;
+    margin: 0 0 1rem;
   }
 
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $color-primary;
+    margin: 0 0 0.75rem;
+  }
 }
 
-.card_content {
-  padding: 1rem;
+.about__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 
-}
-
-.card_title {
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 1rem;
-}
-
-.card_text {
-  margin-bottom: 1.25rem;
-
-}
-
-.occupation {
-  font-size: $font-size-small;
-  text-align: right;
-  margin-bottom: 0.5em;
-}
-
-.card_image {
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
-
-  & img {
-    @include mediaq(desktop) {
-      //width: 200px;
-
-    }
+  img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
+    animation: drop 1.5s ease;
   }
 }

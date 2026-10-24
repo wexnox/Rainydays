@@ -1,49 +1,174 @@
 @use "../abstracts" as *;
+
 .contact__presentation {
   @include flex-column;
   align-items: center;
-  min-height: fit-content;
-  margin: auto;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 3rem auto 4rem;
+  padding: 0 2rem;
 
   @include mediaq(desktop) {
     @include flex-row;
-    min-height: 60vh;
-    max-height: max-content;
-    max-width: 80%;
+    align-items: stretch;
+    gap: 3rem;
   }
 }
 
 .introduction {
   @include flex-column;
-  min-height: fit-content;
-  margin: auto;
-  padding: 2em;
-  width: 90%;
+  justify-content: center;
+  padding: 1.5rem 0;
+  flex: 1;
 
-  @include mediaq(desktop) {
-    width: 40%;
-    justify-content: center;
-    align-self: center;
-    min-height: 80vh;
-  }
+  .intro-text {
+    h1 {
+      font-size: 2.2rem;
+      color: $color-primary-dark;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.5px;
+    }
 
-}
-
-.contact-hero--text {
-  color: white;
-  margin-top: 1rem;
-
-  @include mediaq(desktop) {
-    margin-top: 2rem;
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: $color-primary;
+      margin: 0 0 0.75rem;
+    }
   }
 }
 
 .social-contact {
-  padding-top: 2em;
+  display: flex;
+  gap: 1.2rem;
+  padding-top: 1.5rem;
 
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    color: $color-primary;
+    background: rgba($color-primary, 0.08);
+    border-radius: 50%;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: $color-white;
+      background: $color-secondary;
+      transform: translateY(-2px);
+    }
+  }
 }
 
-.contract--form {
+.cover__contact {
+  flex: 1.2;
+  width: 100%;
 
+  form {
+    background: $color-white;
+    padding: 2rem 2.5rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: $box-shadow-card;
+    overflow: hidden;
+  }
+
+  .form-columns {
+    @include flex-column;
+    gap: 0;
+
+    @include mediaq(desktop) {
+      @include flex-row;
+      gap: 1.5rem;
+    }
+  }
+
+  .form-column {
+    flex: 1;
+  }
+
+  .form-group {
+    margin-bottom: 1.1rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-primary-dark;
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border: 1.5px solid darken($color-grey, 5%);
+    border-radius: 8px;
+    margin: 0;
+    background: rgba($color-grey, 0.15);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+    &::placeholder {
+      color: lighten($color-primary, 25%);
+      font-size: 0.88rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-secondary;
+      box-shadow: 0 0 0 3px rgba($color-secondary, 0.15);
+      background: $color-white;
+      padding: 0.65rem 0.85rem;
+      margin: 0;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+
+  .form-error {
+    font-size: 0.78rem;
+    color: $color-error;
+    margin-top: 0.3rem;
+    display: none;
+  }
+
+  button {
+    margin-top: 1.25rem;
+    width: 100%;
+    padding: 0.85rem;
+    background: $color-secondary;
+    color: $color-white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      background: $color-secondary-dark;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba($color-secondary-dark, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-primary-dark;
+      outline-offset: 2px;
+    }
+  }
 }
-

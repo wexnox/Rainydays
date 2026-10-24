@@ -78,23 +78,24 @@
     </header>
 <a href="http://"></a>
     <main class="content">
-      <div class="presentation">
+      <div class="contact__presentation">
         <div class="introduction">
           <div class="intro-text">
-            <h1>Contact Us!</h1>
-            <p>Soluta unde ducimus, cum reprehenderit distinctio minima.</p>
+            <h1>Contact Us</h1>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
-              soluta natus distinctio nam provident.
+              Have a question about our rain jackets, need help with an order,
+              or just want to say hello? We'd love to hear from you!
             </p>
             <p>
-              Blanditiis sit nostrum commodi tempore tenetur dolorem magni
-              itaque ea placeat corporis suscipit praesentium reprehenderit,
-              ipsam nam amet doloremque facere beatae illum est accusamus
-              consequatur a alias autem laborum!
+              Fill out the form and our team will get back to you within
+              24 hours. Whether it's sizing advice, shipping inquiries, or
+              product recommendations — we're here to help.
+            </p>
+            <p>
+              You can also reach us on social media. Follow us for the latest
+              updates, outdoor inspiration, and exclusive offers.
             </p>
           </div>
-          <!-- TODO: Add this -->
           <div class="social-contact">
             <a href="http://#"><i class="fab fa-facebook"></i></a>
             <a href="http://#"><i class="fab fa-twitter"></i></a>
@@ -102,72 +103,87 @@
             <a href="http://#"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-        <!-- TODO: Styling on font -->
         <div class="cover__contact">
           <form action="" id="contactForm">
-            <div>
-              <label for="firstName"
-                >First name:
-                <input
-                  name="firstName"
-                  id="firstName"
-                  placeholder="Minimum 3 chars (required)"
-                />
-              </label>
-              <div class="form-error" id="firstNameError">
-                Your first name must be at least 3 characters
-              </div>
-            </div>
-            <div>
-              <label for="lastName">
-                Last Name:
-                <input
-                  name="lastName"
-                  id="lastName"
-                  placeholder="Minimum 3 chars (required)"
-                />
-              </label>
-              <div class="form-error" id="lastNameError">
-                Your last name must be at least 3 characters
-              </div>
-            </div>
-            <div>
-              <label for="subject">
-                Subject (required)
-                <input
-                  name="subject"
-                  id="subject"
-                  placeholder="Subject (required)"
-                />
-              </label>
-              <div class="form-error" id="subjectError">
-                Must have a value with a minimum length of 10
-              </div>
-            </div>
-            <div>
-              <label for="email">
-                Email:
-                <input name="email" id="email" placeholder="Email (required)" />
-              </label>
-              <div class="form-error" id="emailError">
-                Please enter a valid email address
-              </div>
-            </div>
-            <div>
-              <label for="address">
-                Address:
-                <input
-                  name="address"
-                  id="address"
-                  placeholder="Address (required)"
-                />
-              </label>
-              <div class="form-error" id="addressError">
-                Please enter a valid Address
-              </div>
-            </div>
+            <div class="form-columns">
+              <div class="form-column">
+                <div class="form-group">
+                  <label for="firstName">First name:</label>
+                  <input
+                    name="firstName"
+                    id="firstName"
+                    placeholder="Minimum 3 chars (required)"
+                  />
+                  <div class="form-error" id="firstNameError">
+                    Your first name must be at least 3 characters
+                  </div>
+                </div>
 
-            <button>Submit</button>
+                <div class="form-group">
+                  <label for="address">Address:</label>
+                  <input
+                    name="address"
+                    id="address"
+                    placeholder="Address (required)"
+                  />
+                  <div class="form-error" id="addressError">
+                    Please enter a valid Address
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input
+                    name="email"
+                    id="email"
+                    placeholder="Email (required)"
+                  />
+                  <div class="form-error" id="emailError">
+                    Please enter a valid email address
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-column">
+                <div class="form-group">
+                  <label for="lastName">Last Name:</label>
+                  <input
+                    name="lastName"
+                    id="lastName"
+                    placeholder="Minimum 3 chars (required)"
+                  />
+                  <div class="form-error" id="lastNameError">
+                    Your last name must be at least 3 characters
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject:</label>
+                  <input
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject (required)"
+                  />
+                  <div class="form-error" id="subjectError">
+                    Must have a value with a minimum length of 10
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message:</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    placeholder="Write your message here (minimum 25 characters)"
+                  ></textarea>
+                  <div class="form-error" id="messageError">
+                    Your message must be at least 25 characters
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>
