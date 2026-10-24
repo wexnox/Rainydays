@@ -15,6 +15,9 @@ const emailError = document.querySelector("#emailError");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
 
+const message = document.querySelector("#message");
+const messageError = document.querySelector("#messageError");
+
 /**
  *
  * @param event
@@ -55,6 +58,13 @@ function validateForm(event) {
     addressError.style.display = "none";
   } else {
     addressError.style.display = "block";
+  }
+
+  // Message
+  if (checkLength(message.value, 24) === true) {
+    messageError.style.display = "none";
+  } else {
+    messageError.style.display = "block";
   }
 }
 
